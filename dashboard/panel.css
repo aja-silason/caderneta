@@ -1,0 +1,170 @@
+:root{
+    --corfundomenu: #f6f6f6;
+    --cordofundodocorpo: #ffffff;
+    --corletrasmenuemais: #d6d9dd; 
+    --cordomenucima: #27cca9;
+    --cordasletrasdomenu: #a3a8b2;
+    --cordosbotoeseoutrosmais: #0fb7a7;
+    --corfundobanners: #bffdf7;
+    --sombra2: 1px 1px 5px rgba(0,0,0, 0.9);
+}
+body{
+    background-color: var(--cordofundodocorpo);
+}
+.cont{
+    width: 95%;
+    margin-left: 120px;
+    flex-wrap: wrap;
+}
+.conteinergeral{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.carduser{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 35%;
+    border-radius: 5px;
+    height: 100px;
+    margin: 5px;
+    background-color: var(--cordofundodocorpo);
+    box-shadow: 1px 2px 5px rgba(0,0,0,0.5);
+    text-align: center;
+}
+.barra{
+    background-color: var(--cordomenucima);
+    width: 5px;
+    height: 50px;
+}
+
+
+
+/*secção panel*/
+/*formulários*/
+
+.addaluno{
+    display: flex;
+    flex-direction: column;
+}
+.addprofessor{
+    background-color: var(--cordasletrasdomenu);
+    color: var(--cordofundodocorpo);
+}
+.addrostos{
+    background-color: var(--cordasletrasdomenu);
+    color: var(--cordofundodocorpo);
+}
+.addaluno form, 
+.addprofessor form, 
+.addanuncios form,
+.addrostos form{
+    display: flex;
+    flex-direction: column;
+}
+input, select, textarea{
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding-left: 5px;
+    font-size: 12pt;
+    height: 35px;
+    width: 450px;
+}
+textarea{
+    height: 90px;
+}
+input[type=file]{
+    border: none;
+}
+select{
+    width: 460px;
+    background-color: var(--cordofundodocorpo);
+    color: rgb(119, 119, 119);
+}
+input[type=date]{
+    background-color: var(--cordofundodocorpo);
+    color: rgb(119, 119, 119);
+}
+button{
+    width: 465px;
+    height: 50px;
+    background-color: var(--cordomenucima);
+    border-radius: 5px;
+    border: none;
+    box-shadow: 1px 1px 2px rgba(0,0,0, 0.9);
+    color: var(--cordofundodocorpo);
+    font-size: 12pt;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/*panel*/
+.panel{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 12pt;
+    margin: 0;
+    padding: 0;
+    color: #ccc;
+}
+.panel div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+.panel div.menu{
+    height: 50vh;
+    background-color: var(--cordosbotoeseoutrosmais);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5px;
+    justify-content: center;
+}
+.menu div{
+    justify-content: end;
+    height: 90px;
+    align-items: flex-start;
+    margin-left: -950px;
+    font-size: 70pt;
+    color: var(--cordofundodocorpo);
+}
+.menu div a{
+    text-transform: initial;
+}
+.menu a{
+    text-decoration: none;
+    color: var(--cordofundodocorpo);
+    text-transform: uppercase;
+}
+
+/*footer*/
+
+.footer{
+    height: 50vh;
+    background-color: var(--cordosbotoeseoutrosmais);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5px;
+    justify-content: center;
+}
+.footer div{
+    justify-content: end;
+    align-items: flex-start;
+    margin-left: 950px;
+    font-size: 70pt;
+    color: var(--cordofundodocorpo);
+}
+.footer div a{
+    text-transform: initial;
+}
+.footer a{
+    text-decoration: none;
+    color: var(--cordofundodocorpo);
+    text-transform: uppercase;
+}

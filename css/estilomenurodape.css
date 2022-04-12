@@ -1,0 +1,48 @@
+:root{
+    --sombra: 0px 20px 15px rgba(0, 0, 0, 0.7);
+    --corfundomenu: #f6f6f6;
+    --cordofundodocorpo: #ffffff;
+    --corletrasmenuemais: #d6d9dd; 
+    --cordomenucima: #27cca9;
+    --cordasletrasdomenu: #a3a8b2;
+    --cordosbotoeseoutrosmais: #0fb7a7;
+}
+.menucima{
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    background-color: var(--cordomenucima);
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.menucima h3{
+    color: var(--corfundomenu);
+    font-weight: 900;
+    font-size: 15pt;
+    margin-right: 150px;
+    margin-left: -90%;
+}
+.menucima ul li a{
+    color: var(--corfundomenu);
+    margin: 0;
+}
+.menucima ul li a:hover{
+    text-decoration: underline;
+}
+.menucima ul{
+    width: 80%;
+    margin-left: 360px;
+    margin-right: -300px;
+}
+
+.menucima .userdataa ul li{
+    display: inline;
+    text-transform: uppercase;
+    margin: 0 25px;
+    cursor: pointer;
+}
+.menu{
+    margin-top: 70px;
+    box-shadow: var(--sombra);
+}

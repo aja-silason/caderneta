@@ -1,0 +1,37 @@
+:root{
+    --corfundomenu: #f6f6f6;
+    --cordofundodocorpo: #ffffff;
+    --corletrasmenuemais: #d6d9dd; 
+    --cordomenucima: #27cca9;
+    --cordasletrasdomenu: #a3a8b2;
+    --cordosbotoeseoutrosmais: #0fb7a7;
+    --corfundobanners: #bffdf7;
+    --sombra2: 1px 1px 5px rgba(0,0,0, 0.9);
+}
+.conteudo{
+    width: 97%;
+    height: 100%;
+    border: 1px solid #fff;
+}
+.comportamento{
+    margin-top: 250px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.conteudo{
+    display: flex;
+    border-radius: 5px;
+    background-color: var(--cordofundodocorpo);
+}
+.conteudo div{
+    background-color: var(--cordasletrasdomenu);
+    height: 150px;
+}
+.conteudo .imgprofile{
+    height: 50px;
+    border: 1px solid #000;
+    width: 150px;
+    background-color: #000;
+}

@@ -1,0 +1,57 @@
+:root{
+    --sombra: 1px 1px 5px rgba(50, 50, 144, 0.77);
+    --corfundomenu: #f6f6f6;
+    --cordofundodocorpo: #ffffff;
+    --corletrasmenuemais: #d6d9dd; 
+    --cordomenucima: #27cca9;
+    --cordasletrasdomenu: #a3a8b2;
+    --cordosbotoeseoutrosmais: #0fb7a7;
+    --corfundocards: rgba(1, 1, 50, 0.1);
+    --boxes: 1px 1px 5px rgba(50, 50, 50, 0.77);
+
+}
+.conteineranuncios{
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    display: flex;
+    width: 90%;
+    height: 270px;
+    display: flex;
+    justify-content: center;
+}
+.cardsanuncios1{
+    height: 200px;
+    border-radius: 5px;
+    width: 150px;
+    margin: 10px 10px;
+    background-color: var(--corfundocards);
+    transition: 250ms;
+    cursor: pointer;
+
+}
+.cardsanuncios1:hover{
+    box-shadow: var(--boxes);
+}
+.cardsanuncios1 img{
+    width: 100%;
+    align-items: center;
+    height: 70%;
+    border-radius: 5px;
+}
+.ps{
+    margin-top: -10px;
+    padding: 5px 20px;
+    border-radius: 5px;
+    background-color: var(--cordomenucima);
+}
+.ps p{
+    color: var(--corfundomenu);
+    font-weight: bold;
+}
+.ps:hover{
+    color: #0fb7a7;
+    cursor: pointer;
+}
+h2{
+    color: var(--cordosbotoeseoutrosmais);
+}

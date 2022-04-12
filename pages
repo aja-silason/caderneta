@@ -1,0 +1,61 @@
+<?php
+
+require_once 'conexao.php';
+
+session_start();
+
+/* Para manter o inicio de sessão organizado*/
+if(isset($_SESSION['logado'])):
+    header('Location: home.php');
+endif;
+
+if(isset($_POST['acessarconta'])):
+    $erros = array();
+    $fonelogin = mysqli_escape_string($connect, $_POST['numeros']);
+    $pass = mysqli_escape_string($connect, $_POST['password']);
+
+    if(empty($fonelogin) or empty($pass)):
+        $erros[] = "<p class='erro3'>Preencha todos os campos para poderes iniciar sessão.</p>";
+    
+    else:
+        $sql = "SELECT telefone FROM user WHERE telefone='$fonelogin'";
+        $resultado = mysqli_query($connect, $sql);
+
+        if(mysqli_num_rows($resultado) > 0 ):
+            $sql = "SELECT * FROM user WHERE telefone = '$fonelogin' AND pass = '$pass'";
+            $resultado = mysqli_query($connect, $sql);
+            
+            if(mysqli_num_rows($resultado) == 1):
+                $dados = mysqli_fetch_array($resultado);
+                mysqli_close($connect);   
+
+                $_SESSION['logado'] = true;
+                $_SESSION['id_usuario'] = $dados['id'];
+
+                header('Location: home.php');
+
+                if($_SESSION['id_usuario'] == 1):
+                    header('Location: ./dashboard/index.php');
+                endif;
+
+            else:
+                $erros[] = "<p class='erro'>Usuário não existe, crie uma conta se não tiveres uma.</p>";
+            
+            endif;
+
+        else:
+            $erros[] = "<p class='erro2'>Usuário não existe, crie uma conta se não tiveres uma.</p>";
+        endif;
+
+    endif;
+endif;
+?>
+
+
+<?php
+    if(!empty($erros)):
+        foreach($erros as $erro):
+            echo $erro;
+        endforeach;
+    endif;
+?>

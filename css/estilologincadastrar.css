@@ -1,0 +1,105 @@
+*{
+    font-family: Arial;
+    
+}
+:root{
+    --sombra: 1px 1px 5px rgba(50, 50, 144, 0.77);
+    --corfundomenu: #f6f6f6;
+    --cordofundodocorpo: #ffffff;
+    --corletrasmenuemais: #d6d9dd; 
+    --cordomenucima: #27cca9;
+    --cordasletrasdomenu: #a3a8b2;
+    --cordosbotoeseoutrosmais: #0fb7a7;
+}
+body{
+    background-color: var(--cordomenucima);
+}
+.bannerlogin{
+    width: 35%;
+    height: 100%;
+    margin-left: 30%;
+    margin-top: 10%;
+    background-color: #fefefd;
+    opacity: 1;
+    padding-top: 2%;
+    padding-left: 2%;
+    padding-bottom: 2%;
+    border-radius: 20px;
+}
+.bannerCriar{
+    width: 35%;
+    height: 100%;
+    margin-left: 30%;
+    margin-top: 2%;
+    background-color: #fefefd;
+    opacity: 1;
+    padding-top: 2%;
+    padding-left: 2%;
+    padding-bottom: 2%;
+    border-radius: 20px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+.nome, .telefone, .idade, .nacionalidade, .pass, .confpass, .classe, .curso{
+    width: 93%;
+    height: 40px;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    padding-left: 5px;
+    color: #061327;
+    margin-bottom: 5px;
+}
+
+.btnAcessar{
+    margin-left: 78%;
+    height: 40px;
+    border: 1px solid;
+    border-radius: 5px;
+    padding-left: 5px;
+    color: #fff;
+    background-color: var(--cordosbotoeseoutrosmais);
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+}
+.btnSolicitar{
+    margin-left: 61.5%;
+    height: 40px;
+    border: 1px solid;
+    border-radius: 5px;
+    padding-left: 5px;
+    color: #fff;
+    background-color: var(--cordosbotoeseoutrosmais);
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+}
+.btnConfirmar{
+    margin-left: 75%;
+    height: 40px;
+    border: 1px solid;
+    border-radius: 5px;
+    padding-left: 5px;
+    color: #fff;
+    background-color: var(--cordosbotoeseoutrosmais);
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.bannerlogin h1, p, a{
+    color: var(--cordasletrasdomenu);
+}
+.bannerlogin a:hover{
+    color: var(--cordomenucima);
+}
+.bannerCriar h1, p, a{
+    color: var(--cordasletrasdomenu);
+}
+.bannerCriar a:hover{
+    color: var(--cordomenucima);
+}
+

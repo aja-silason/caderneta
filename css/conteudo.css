@@ -1,0 +1,30 @@
+:root{
+    --corfundomenu: #f6f6f6;
+    --cordofundodocorpo: #ffffff;
+    --corletrasmenuemais: #d6d9dd; 
+    --cordomenucima: #27cca9;
+    --cordasletrasdomenu: #a3a8b2;
+    --cordosbotoeseoutrosmais: #0fb7a7;
+    --corfundobanners: #bffdf7;
+}
+.conteudo .vitrini div{
+    background-color: var(--cordomenucima);
+    display: flex;
+    width: 95%;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    margin: 40px 0px 0px 0px;
+    border-radius: 5px;
+} 
+span{
+    color: red;
+}
+h2, h3{
+    margin-bottom: 0px;
+    color: var(--corfundomenu);
+}
+p{
+    text-align: justify;
+    color: var(--corfundomenu);
+}
