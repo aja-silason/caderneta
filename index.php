@@ -4,9 +4,13 @@ require_once 'conexao.php';
 
 session_start();
 
-/* Para manter o inicio de sessão organizado*/
-if(isset($_SESSION['logado'])):
-    header('Location: inicio.php');
+/* Para manter o inicio de sessão organizado entre o panel de admin e user normal*/
+if(isset($_SESSION['iniciada'])):
+    if($_SESSION['id_usuario'] == 1 ):
+        header('Location: ./dashboard/index.php');
+    else:
+        header('Location: inicio.php');
+    endif;
 endif;
 
 if(isset($_POST['btnAcessar'])):
@@ -14,54 +18,39 @@ if(isset($_POST['btnAcessar'])):
     $fonelogin = mysqli_escape_string($connect, $_POST['telefone']);
     $bilogin = mysqli_escape_string($connect, $_POST['bi']);
 
-    $verificacao1 = "SELECT nome FROM admin_login WHERE nome = '$fonelogin'";
-    $result1 = mysqli_query($connect, $verificacao1);
-
-    $verificacao2 = "SELECT pass FROM admin_login WHERE pass = '$bilogin'";
-    $result2 = mysqli_query($connect, $verificacao2);
-
-    if($fonelogin = $result1 and $bilogin = $result2):
-            $_SESSION['logado'] = true;
-            $_SESSION['id_usuario'] = $dados['id'];
-
-            header('Location: dashboard/index.php');
-
-    else:
-        if(empty($fonelogin) or empty($bilogini)):
+    if(empty($fonelogin) or empty($bilogin)):
         $erros[] = "<p class='erro3'>Preencha todos os campos para poderes iniciar sessão.</p>";
     
-        else:
-            $sql = "SELECT telefone FROM user WHERE telefone='$fonelogin'";
+    else:
+        $sql = "SELECT telefone FROM user WHERE telefone='$fonelogin'";
+        $resultado = mysqli_query($connect, $sql);
+
+        if(mysqli_num_rows($resultado) > 0 ):
+            $sql = "SELECT * FROM user WHERE telefone = '$fonelogin' AND bi = '$bilogin'";
             $resultado = mysqli_query($connect, $sql);
+            
+            if(mysqli_num_rows($resultado) == 1):
+                $dados = mysqli_fetch_array($resultado);
+                mysqli_close($connect);   
 
-            if(mysqli_num_rows($resultado) > 0 ):
-                $sql = "SELECT * FROM user WHERE telefone = '$fonelogin' AND pass = '$pass'";
-                $resultado = mysqli_query($connect, $sql);
-                
-                if(mysqli_num_rows($resultado) == 1):
-                    $dados = mysqli_fetch_array($resultado);
-                    mysqli_close($connect);   
+                $_SESSION['iniciada'] = true;
+                $_SESSION['id_usuario'] = $dados['id'];
 
-                    $_SESSION['logado'] = true;
-                    $_SESSION['id_usuario'] = $dados['id'];
+                header('Location: ./inicio.php');
 
-                    header('Location: home.php');
-
-                    if($_SESSION['id_usuario'] == 1):
-                        header('Location: ./dashboard/index.php');
-                    endif;
-
-                else:
-                    $erros[] = "<p class='erro'>Usuário não existe, crie uma conta se não tiveres uma.</p>";
-                
+                if($_SESSION['id_usuario'] < 2):
+                    header('Location: ./dashboard/index.php');
                 endif;
 
             else:
-                $erros[] = "<p class='erro2'>Usuário não existe, crie uma conta se não tiveres uma.</p>";
+                $erros[] = "<p class='erro'>Usuário não existe, crie uma conta se não tiveres uma.</p>";
+            
             endif;
 
+        else:
+            $erros[] = "<p class='erro2'>Usuário não existe, crie uma conta se não tiveres uma.</p>";
         endif;
-    
+
     endif;
     
 endif;
@@ -82,7 +71,7 @@ endif;
                 
                 <h1 style=" margin-left: -30px; text-align:center;">Acessar a minha Caderneta</h1>
                 
-                <input type="text" placeholder="Insira o seu número de telefone" class="telefone" id="telefone" name="telefone">
+                <input type="text" placeholder="Insira o seu número de telefone" class="telefone" id="telefone" name="telefone" required>
                <br/>
                <br/>
                 <input type="text" placeholder="Insira o seu número do BI" class="pass" id="bi" name="bi">

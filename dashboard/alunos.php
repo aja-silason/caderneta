@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['iniciada'])):
+    header('Location: ../index.php');
+endif;
+?>
 <!Doctype html>
 <html lang="pt-br">
 <head>

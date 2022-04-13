@@ -22,7 +22,7 @@
         <form action="professores.html" method="post" enctype="multipart/form-data">
 
             <span>Fotografia tipo passe</span>
-            <input type="file" riquered class="fotoaluno" id="fotoaluno" name="fotoaluno">
+            <input type="file" required class="fotoaluno" id="fotoaluno" name="fotoaluno">
 
             <input type="text" placeholder="Nome completo" class="nome" id="nome" name="nome" riquered>
 
