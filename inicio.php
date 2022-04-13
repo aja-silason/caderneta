@@ -1,3 +1,22 @@
+<?php
+include "./conexao.php";
+
+session_start();
+
+$id = $_SESSION['id_usuario'];
+
+    if(!isset($_SESSION['iniciada'])):
+        header('Location: ./index.php');
+    endif;
+
+
+    $sql = "SELECT * FROM user WHERE id = '$id'";
+
+    $resultado = mysqli_query($connect, $sql);
+    $dados = mysqli_fetch_array($resultado);
+
+mysqli_close($connect);
+?>
 <!Doctype html>
 <html lang="pt-br">
 <head>
@@ -13,7 +32,7 @@
                 </div>
                 <div class="userdataa">
                     <ul>
-                        <li><a href="perfil.html">Nome do user</a></li>
+                        <li><a href="perfil.html"><?php echo $dados['nome']; ?></a></li>
                         <li><a href="logout.php">Sair</a></li>
 
                     </ul>

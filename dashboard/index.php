@@ -1,10 +1,18 @@
 <?php
+include "../conexao.php";
 
 session_start();
 
 if(!isset($_SESSION['iniciada'])):
     header('Location: ../index.php');
 endif;
+
+$id = $_SESSION['id_usuario'];
+
+$sql = "SELECT * FROM user WHERE id = '$id'";
+
+$resultado = mysqli_query($connect, $sql);
+$dados = mysqli_fetch_array($resultado);
 
 ?>
 <!Doctype html>
@@ -25,7 +33,7 @@ endif;
                 </div>
                 <div class="userdataa">
                     <ul>
-                        <li><a href="perfil.php">Nome do user</a></li>
+                        <li><a href="#"><?php echo $dados['nome']; ?></a></li>
                         <li><a href="../logout.php">Sair</a></li>
 
                     </ul>
@@ -45,37 +53,135 @@ endif;
                     </ul>
                 </div>
 
-    <div class="conteudohome">
-        <div class="conthome" style="margin-top: 220px; margin-left: 200px;">
+            <div class="conteudohome">
+                <div class="conthome" style="margin-top: 220px; margin-left: 200px;">
 
-        <div class="cont">
-            <div class="conteinergeral">
-                <div class="carduser">
-                    <div class="barra"></div>
-                    <div class="nomecard">
-                        <h3>** Classe</h3>
-                        <h3>Curso **</h3>
-                        <h3>** alunos</h3>
-                    </div>
-                    <div class="barra"></div>
-                </div>
+                    <div class="cont">
 
-                <div class="carduser">
-                    <div class="barra"></div>
-                    <div class="nomecard">
-                        <h3>** Classe</h3>
-                        <h3>Curso **</h3>
-                        <h3>** alunos</h3>
-                    </div>
-                    <div class="barra"></div>
-                </div>
-            </div>
+                            <!--area da 10-->
+                            <!--10ª classe CEJ-->
+                            <?php           
+                                $sala = "SELECT classe,curso,cargo FROM user WHERE classe = '10 ª' AND curso = 'Ciências Econômicas e Jurídicas' AND cargo = 'Aluno' ORDER BY id LIMIT 30";
+                                $resultadosala = mysqli_query($connect, $sala); 
+                                $dadosala = mysqli_fetch_array($resultadosala);      
+                                $linhasala = mysqli_num_rows($resultadosala);
+                            ?>
 
-        </div>
-
+                        <div class="conteinergeral">
+                            <div class="carduser">
+                                <div class="barra"></div>
+                                <div class="nomecard">
+                                    <h3><?php echo "Classe:", $dadosala['classe'] ?></h3>
+                                    <h3><?php echo "Curso:", $dadosala['curso'] ?></h3>
+                                    <h3><?php echo "Alunos:", $linhasala ?></h3>
+                                </div>
+                                <div class="barra"></div>
+                            </div>
                             
-            </div>
+
+                            <!--10ª classe CFB-->
+                            <?php           
+                                $sala = "SELECT classe,curso,cargo FROM user WHERE classe = '10 ª' AND curso = 'Ciências Físicas e Biológicas' AND cargo = 'Aluno' ORDER BY id LIMIT 30";
+                                $resultadosala = mysqli_query($connect, $sala); 
+                                $dadosala = mysqli_fetch_array($resultadosala);      
+                                $linhasala = mysqli_num_rows($resultadosala);
+                            ?>
+                            <div class="carduser">
+                                <div class="barra"></div>
+                                <div class="nomecard">
+                                    <h3><?php echo "Classe:", $dadosala['classe'] ?></h3>
+                                    <h3><?php echo "Curso:", $dadosala['curso'] ?></h3>
+                                    <h3><?php echo "Alunos:", $linhasala ?></h3>
+                                </div>
+                                <div class="barra"></div>
+                            </div>
+
+                        </div>
+
+                        <!--11 area-->
+                        <!--11ª classe CEJ-->
+                        <?php           
+                                $sala = "SELECT classe,curso,cargo FROM user WHERE classe = '11 ª' AND curso = 'Ciências Econômicas e Jurídicas' AND cargo = 'Aluno' ORDER BY id LIMIT 30";
+                                $resultadosala = mysqli_query($connect, $sala); 
+                                $dadosala = mysqli_fetch_array($resultadosala);      
+                                $linhasala = mysqli_num_rows($resultadosala);
+                            ?>
+
+                        <div class="conteinergeral">
+                            <div class="carduser">
+                                <div class="barra"></div>
+                                <div class="nomecard">
+                                    <h3><?php echo "Classe:", $dadosala['classe'] ?></h3>
+                                    <h3><?php echo "Curso:", $dadosala['curso'] ?></h3>
+                                    <h3><?php echo "Alunos:", $linhasala ?></h3>
+                                </div>
+                                <div class="barra"></div>
+                            </div>
+                            
+
+                            <!--11ª classe CFB-->
+                            <?php           
+                                $sala = "SELECT classe,curso,cargo FROM user WHERE classe = '11 ª' AND curso = 'Ciências Físicas e Biológicas' AND cargo = 'Aluno' ORDER BY id LIMIT 30";
+                                $resultadosala = mysqli_query($connect, $sala); 
+                                $dadosala = mysqli_fetch_array($resultadosala);      
+                                $linhasala = mysqli_num_rows($resultadosala);
+                            ?>
+                            <div class="carduser">
+                                <div class="barra"></div>
+                                <div class="nomecard">
+                                    <h3><?php echo "Classe:", $dadosala['classe'] ?></h3>
+                                    <h3><?php echo "Curso:", $dadosala['curso'] ?></h3>
+                                    <h3><?php echo "Alunos:", $linhasala ?></h3>
+                                </div>
+                                <div class="barra"></div>
+                            </div>
+ 
+                        </div>
+
+                        <!--12 area-->
+                        <!--12ª classe CEJ-->
+                        <?php           
+                                $sala = "SELECT classe,curso,cargo FROM user WHERE classe = '12 ª' AND curso = 'Ciências Econômicas e Jurídicas' AND cargo = 'Aluno' ORDER BY id LIMIT 30";
+                                $resultadosala = mysqli_query($connect, $sala); 
+                                $dadosala = mysqli_fetch_array($resultadosala);      
+                                $linhasala = mysqli_num_rows($resultadosala);
+                            ?>
+
+                        <div class="conteinergeral">
+                            <div class="carduser">
+                                <div class="barra"></div>
+                                <div class="nomecard">
+                                    <h3><?php echo "Classe:", $dadosala['classe'] ?></h3>
+                                    <h3><?php echo "Curso:", $dadosala['curso'] ?></h3>
+                                    <h3><?php echo "Alunos:", $linhasala ?></h3>
+                                </div>
+                                <div class="barra"></div>
+                            </div>
+                            
+
+                            <!--12ª classe CFB-->
+                            <?php           
+                                $sala = "SELECT classe,curso,cargo FROM user WHERE classe = '12 ª' AND curso = 'Ciências Físicas e Biológicas' AND cargo = 'Aluno' ORDER BY id LIMIT 30";
+                                $resultadosala = mysqli_query($connect, $sala); 
+                                $dadosala = mysqli_fetch_array($resultadosala);      
+                                $linhasala = mysqli_num_rows($resultadosala);
+                            ?>
+                            <div class="carduser">
+                                <div class="barra"></div>
+                                <div class="nomecard">
+                                    <h3><?php echo "Classe:", $dadosala['classe'] ?></h3>
+                                    <h3><?php echo "Curso:", $dadosala['curso'] ?></h3>
+                                    <h3><?php echo "Alunos:", $linhasala ?></h3>
+                                </div>
+                                <div class="barra"></div>
+                            </div>
+
+                            <?php 
+                                mysqli_close($connect);
+                            ?>  
+                        </div>
+                </div>
         </div>
-        </div>
+    </div>
     </body>    
 </html>

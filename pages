@@ -59,3 +59,39 @@ endif;
         endforeach;
     endif;
 ?>
+
+
+
+
+<?php
+
+    include "conexao.php";
+/*Upload da imagem */
+    $extensao = strtolower(substr($_FILES['imagem']['name'], -5)); //pega a extensão do arquivo
+
+    $nome_imagem = md5(time()).$extensao;//define o nome do arquivo
+
+    $diretorio = "./assets/upload/";//define o directorio para onde é enviado o arquivo
+
+    move_uploaded_file($_FILES['imagem']['tmp_name'], "./assets/upload/".$nome_imagem); //efetua o upload do arquivo
+
+/*fim do Upload da imagem */
+
+    $user_id = $_POST['id_user'];
+    $nome_user = $_POST['nome_user'];
+
+    $nomepost = $_POST['nomepost'];
+    $idadepost = $_POST['idadepost'];
+    $localizacao = $_POST['localizacao'];
+    $contactopost = $_POST['contatopost'];
+    $descricaopost = $_POST['descricaopost'];
+
+    $sqlpost = "insert into postagem (nomepost, idadepost, localizacao, contatopost, descricaopost, imagem, user_id, nome_user) values ('$nomepost', '$idadepost', '$localizacao', '$contactopost', '$descricaopost', '$nome_imagem', '$user_id', '$nome_user')";
+
+    $postar = mysqli_query($connect,$sqlpost);
+
+    header('Location: home.php');
+
+    mysqli_close($connect);
+
+?>

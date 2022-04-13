@@ -19,7 +19,7 @@
     <!-- Aluno--> 
     <div class="addaluno">
         <h2>Adicionar aluno novo a escola</h2>
-        <form action="professores.html" method="post" enctype="multipart/form-data">
+        <form action="pAlunos.php" method="post" enctype="multipart/form-data">
 
             <span>Fotografia tipo passe</span>
             <input type="file" required class="fotoaluno" id="fotoaluno" name="fotoaluno">
@@ -67,8 +67,8 @@
 
             <input type="text" placeholder="B.I. tudo em minúscula" class="bi" id="bi" name="bi" riquered>
 
-            <select name="cargo" id="cargo" disabled="disabled">
-                <option>Professor</option>
+            <select name="cargo" id="cargo">
+                <option>Aluno</option>
             </select>
 
             <!--Dados encarregados-->
