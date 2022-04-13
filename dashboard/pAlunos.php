@@ -31,6 +31,8 @@
 
     $adicionar = mysqli_query($connect,$sqladd);
 
+    echo "<script>alert('Aluno adicionado com sucesso!')</script>";
+
     header('Location: ./index.php');
 
     mysqli_close($connect);

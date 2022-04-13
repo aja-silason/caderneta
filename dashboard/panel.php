@@ -99,14 +99,14 @@
     <!--Professor-->
     <div class="addprofessor">
         <h2>Adicionar novo professor a escola</h2>
-        <form action="professores.html" method="post" enctype="multipart/form-data">
+        <form action="pProfessores.php" method="post" enctype="multipart/form-data">
 
             <span>Fotografia meio corpo</span>
-            <input type="file" riquered class="fotoprofessor" id="fotoprofessor" name="fotoprofessor">
+            <input type="file" riquired class="fotoprofessor" id="fotoprofessor" name="fotoprofessor">
 
-            <input type="text" placeholder="Nome completo" class="nomeprofessor" id="nomeprofessor" name="nomeprofessor" riquered>
+            <input type="text" placeholder="Nome completo" class="nomeprofessor" id="nomeprofessor" name="nomeprofessor" riquired>
 
-            <input type="number" placeholder="Número de telefone" class="telefoneprofessor" id="telefoneprofessor" name="telefoneprofessor" riquered>
+            <input type="number" placeholder="Número de telefone" class="telefoneprofessor" id="telefoneprofessor" name="telefoneprofessor" riquired>
 
             <span>Classe a Lecionar</span>
             <select name="classeprofessor" id="classeprofessor" class="classeprofessor">
@@ -120,8 +120,26 @@
                 <option>Ciências Físicas e Biológicas</option>
                 <option>Ciências Econômicas e Jurídicas</option>
             </select>
+
+            <select name="disciplina" id="disciplina" class="disciplina">
+                <option>Disciplina </option>
+                <option>Língua Portuguêsa</option>
+                <option>Química</option>
+                <option>Matemática</option>
+                <option>Física</option>
+                <option>Biológia</option>
+                <option>Educação Física</option>
+                <option>Língua Estrangeira</option>
+                <option>Sociologia</option>
+                <option>DES</option>
+                <option>Economia</option>
+                <option>Psicológia</option>
+                <option>Filosófia</option>
+                <option>Empreendedorismo</option>
+                
+            </select>
                     
-            <input type="date" placeholder="Insira a sua idade" class="idade" id="idade" name="idade" riquered>
+            <input type="date" placeholder="Insira a sua idade" class="idade" id="idade" name="idade" riquired>
 
             <select name="pais" id="paiscreate" class="paiscreate">
                 <option>Natural de: </option>
@@ -148,7 +166,7 @@
 
             <input type="text" placeholder="B.I. tudo em minúscula" class="bi" id="bi" name="bi" riquered>
 
-            <select name="cargo" id="cargo" disabled="disabled">
+            <select name="cargo" id="cargo">
                 <option>Professor</option>
             </select>
 
