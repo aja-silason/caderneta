@@ -1,3 +1,20 @@
+<?php
+include "../conexao.php";
+
+session_start();
+
+if(!isset($_SESSION['iniciada'])):
+    header('Location: ../index.php');
+endif;
+
+$id = $_SESSION['id_usuario'];
+
+$sql = "SELECT * FROM user WHERE id = '$id'";
+
+$resultado = mysqli_query($connect, $sql);
+$dados = mysqli_fetch_array($resultado);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

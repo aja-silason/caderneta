@@ -8,7 +8,7 @@
 
     $diretorio = "./assets/fotoaluno/";//define o directorio para onde é enviado o arquivo
 
-    move_uploaded_file($_FILES['fotoaluno']['tmp_name'], "./assets/fotoaluno/".$nome_imagem); //efetua o upload do arquivo
+    move_uploaded_file($_FILES['fotoaluno']['tmp_name'], "../assets/fotoaluno/".$nome_imagem); //efetua o upload do arquivo
 
 /*fim do Upload da imagem */
     
